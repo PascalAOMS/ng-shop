@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-5">
+    <recipe-list></recipe-list>
+  </div>
+  <div class="col-md-7">
+    <recipe-detail
+      *ngIf="selectedRecipe"
+      [recipe]="selectedRecipe"
+    ></recipe-detail>
+    <!--*ngIf="selectedRecipe; else detailElse"-->
+    <!--<ng-template #detailElse><span [appHighlight]="'red'" [defaultColor]="'gray'">Select a Recipe!</span></ng-template>-->
+    <span *appUnless="selectedRecipe" [appHighlight]="'red'" [defaultColor]="'gray'">Select a Recipe!</span>
+  </div>
+</div>
